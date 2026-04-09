@@ -101,10 +101,10 @@ st.subheader("Factores de riesgo")
 binary_inputs = {}
 
 for var in binary_variables:
-    binary_inputs[var] = st.selectbox(
+    binary_inputs[var] = 1 if st.selectbox(
         var.replace("_", " ").capitalize(),
         ["No", "Si"]
-    )
+    ) == "Si" else 0
 
 # ------------------------------
 # Otras variables categóricas
